@@ -82,16 +82,16 @@ function valid(form) {
     var pass = form.pass.value;
     var eMail = form.eMail.value;
 
-    // =====
-    // var pos = 0;
-    // while (true) {
-    //     var foundPosTarget = fName.indexOf(searchTarget, pos);
-    //     if (foundPosTarget == -1) break;
+    var result1 = fName.replace(/(^\s+|\s+$)/g, '');
+    console.log(result1);
 
-    //     console.log(foundPosTarget); // нашли на этой позиции
-    //     pos = foundPosTarget + 1; // продолжить поиск со следующей
-    // }
-    // =====
+    document.getElementById('fName').innerHTML = result1;
+
+    var result2 = lName.replace(/(^\s+|\s+$)/g, '');
+    console.log(result2);
+
+    document.getElementById('lName').innerHTML = result2;
+
 
     var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
