@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unit-5. String</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--     <form>
+            <label>
+                Number Input 1
+                <input type="number" min="10" max="100" step="10">
+            </label>
+            <label>
+                Number Input 2
+                <input type="number" min="10" max="100" step="10">
+            </label>
+            <label>
+                Number Input 3
+                <input type="number" min="10" max="100" step="10">
+            </label>
+            <input type="submit">
+        </form>
+        <hr> -->
+        <!-- 5 -->
+        <h2>Задание 5</h2>
+        <p>Пользователь заполняет форму состоящую из фамилии, имени пароля и email. Используя приведенные методы выполните обработку формы состоящую из удаления пробелов до и после введённых слов, пароль не должен быть меньше 5 символов, email должен содержать один символ @ и не содержать пробелов. Если форма заполнена корректно, возвращать true.</p>
+        <div class="reg-form">
+            <form id="myForm" name="regForm" action="#" method="POST">
+                <fieldset>
+                    <legend>
+                        <h3>Registration form</h3></legend>
+                    <input type="text" name="fName" placeholder="First Name" value="Pavel">
+                    <input type="text" name="lName" placeholder="Last Name" value="Viznytsia">
+                    <input type="password" name="pass" placeholder="Password" value="qwe"><span id="passCheck"></span>
+                    <input type="email" name="eMail" placeholder="E-mail" value="viznitsap@gmail.com">
+                    <input id="submit-btn" type="button" value="Отправить">
+                    <!-- <button id="submit-btn" value="5">Submit</button> -->
+                </fieldset>
+            </form>
+        </div>
+        <hr>
+        <!-- 1 -->
+        <h2>Задание 1</h2>
+        <p>Вычитайте строку из input. Высчитайте ее длину. Выведите результат.</p>
+        <input id="in1" type="text" placeholder="Enter a string ...">
+        <button id="btn1">Push...</button>
+        <p>Enter: <span id="out1"></span> pcs</p>
+        <hr>
+        <!-- 2 -->
+        <h2>Задание 2</h2>
+        <p>Создайте массив, который содержит имена изображений в определенной папке. Запустите цикл по массиву и выведите все изображения на страницу. Подсказка, для вывода изображения используйте тег &#60;img src="xxxx"&#62; где xxx – путь к файлу.</p>
+        <button id="btn2">Show IMG ...</button>
+        <div id="imgCont">
+            <!-- <img id="img2" src="#" alt="img"> -->
+        </div>
+        <hr>
+        <!-- 3 -->
+        <h2>Задание 3</h2>
+        <p>Пользователь вводит URL адрес в input в формате http или https. Выведите только имя домена без префиксов http://, https://.</p>
+        <input id="in3" type="text" placeholder="Enter a site address ..." value="http://google.com">
+        <button id="btn3">Push...</button>
+        <p>Site without prefix: <span id="out3"></span></p>
+        <hr>
+        <!-- 4 -->
+        <h2>Задание 4</h2>
+        <p>Пользователь может ввести адрес сайта в формате http://site.ua, https://site.ua, http://www.site.ua, https://www.site.ua или site.ua. Ваша задача используя поиск в подстроке вывести site в виде: site.ua.</p>
+        <input id="in4" type="text" placeholder="Enter a site address ..." value="http://site.ua">
+        <button id="btn4">Push...</button>
+        <p>Site without prefix: <span id="out4"></span></p>
+        <hr>
+        <!-- ===================================== -->
+        <!-- 5 -->
+        <!-- ===================================== -->
+        <hr>
+        <!-- 6 -->
+        <h2>Задание 6</h2>
+        <p>Пользователь вводит символ, выведите его код.</p>
+        <input id="in6" type="text" placeholder="Enter a char ...">
+        <p>Code of this char is: <span id="out6"></span></p>
+        <hr>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

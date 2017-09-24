@@ -1,0 +1,43 @@
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 900px;
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 0 24px;
+}
+
+body {
+    margin: 0;
+    background-image: url(img/bg.jpg);
+    background-attachment: fixed;
+    opacity: .95;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 8px;
+    text-indent: 1.5em;
+}
+
+.reg-form {
+    text-align: center;
+}
+
+.reg-form fieldset {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.reg-form input {
+    display: block;
+    margin: 8px auto;
+    width: 80%;
+}
+
+input[type="button"] {
+    width: 20%;
+}
