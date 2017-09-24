@@ -83,12 +83,12 @@ function valid(form) {
     var eMail = form.eMail.value;
 
     var result1 = fName.replace(/(^\s+|\s+$)/g, '');
-    console.log(result1);
+    // console.log(result1);
 
     document.getElementById('fName').innerHTML = result1;
 
     var result2 = lName.replace(/(^\s+|\s+$)/g, '');
-    console.log(result2);
+    // console.log(result2);
 
     document.getElementById('lName').innerHTML = result2;
 
@@ -99,12 +99,13 @@ function valid(form) {
         console.log('Введите имя');
     } else if (lName == '' || lName == ' ') {
         console.log('Введите фамилию');
-    } else if (pass == '' || pass.length < 4) {
+    } else if (pass == '' || pass.length < 6) {
         console.log('Введите пароль');
     } else if (validEmail.test(eMail) == false) {
         console.log('Введите E-mail правильно!');
     } else {
-        window.location = 'http://diz.promo.net.ua/patyaikasha/';
+        return (console.log(true));
+        // window.location = 'http://diz.promo.net.ua/patyaikasha/';
     }
 
 
