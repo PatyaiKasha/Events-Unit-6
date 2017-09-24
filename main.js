@@ -82,15 +82,22 @@ function valid(form) {
     var pass = form.pass.value;
     var eMail = form.eMail.value;
 
-    var result1 = fName.replace(/(^\s+|\s+$)/g, '');
-    // console.log(result1);
+    var text1 = fName.trim();
+    console.log(text1);
 
-    document.getElementById('fName').innerHTML = result1;
+    // document.getElementById('fName').innerHTML = text1;
 
-    var result2 = lName.replace(/(^\s+|\s+$)/g, '');
-    // console.log(result2);
+    var text2 = lName.trim();
+    console.log(text2);
 
-    document.getElementById('lName').innerHTML = result2;
+    // document.getElementById('lName').innerHTML = text2;
+
+    // var result1 = fName.replace(/(^\s+|\s+$)/g, '');
+    // // console.log(result1);
+
+
+    // var result2 = lName.replace(/(^\s+|\s+$)/g, '');
+    // // console.log(result2);
 
 
     var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
