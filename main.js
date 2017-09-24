@@ -83,14 +83,14 @@ function valid(form) {
     var eMail = form.eMail.value;
 
     // =====
-    var pos = 0;
-    while (true) {
-        var foundPosTarget = fName.indexOf(searchTarget, pos);
-        if (foundPosTarget == -1) break;
+    // var pos = 0;
+    // while (true) {
+    //     var foundPosTarget = fName.indexOf(searchTarget, pos);
+    //     if (foundPosTarget == -1) break;
 
-        console.log(foundPosTarget); // нашли на этой позиции
-        pos = foundPosTarget + 1; // продолжить поиск со следующей
-    }
+    //     console.log(foundPosTarget); // нашли на этой позиции
+    //     pos = foundPosTarget + 1; // продолжить поиск со следующей
+    // }
     // =====
 
     var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
