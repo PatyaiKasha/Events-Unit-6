@@ -3,63 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Unit-5. String</title>
+    <title>Unit-6. Events</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div class="wrapper">
         <!-- 1 -->
-        <h2>Задание 1</h2>
-        <p>Вычитайте строку из input. Высчитайте ее длину. Выведите результат.</p>
-        <input id="in1" type="text" placeholder="Enter a string ...">
-        <button id="btn1">Push...</button>
-        <p>Enter: <span id="out1"></span> pcs</p>
+        <h2>Задача 1</h2>
+        <p>Выведите координаты мыши относительно блока в момент движения курсора мыши внутри блока. Координаты выводить под блоком.</p>
+        <div id="block1" class="block1"></div>
+        <p id="coordX"></p>
+        <p id="coordY"></p>
         <hr>
         <!-- 2 -->
-        <h2>Задание 2</h2>
-        <p>Создайте массив, который содержит имена изображений в определенной папке. Запустите цикл по массиву и выведите все изображения на страницу. Подсказка, для вывода изображения используйте тег &#60;img src="xxxx"&#62; где xxx – путь к файлу.</p>
-        <button id="btn2">Show IMG ...</button>
-        <div id="imgCont">
-            <!-- <img id="img2" src="#" alt="img"> -->
-        </div>
+        <h2>Задача 2</h2>
+        <p>Создайте блок div, в качестве изображения фона установите ему изображение закрытой папки. Добавьте событие, которое выполняется при двойном клике на блоке и заменяет фон блока на изображение открытой папки.
+        </p>
+        <img id="folder" class="folder" src="img/folder.svg" alt="folder">
         <hr>
         <!-- 3 -->
         <h2>Задание 3</h2>
-        <p>Пользователь вводит URL адрес в input в формате http или https. Выведите только имя домена без префиксов http://, https://.</p>
-        <input id="in3" type="text" placeholder="Enter a site address ..." value="http://google.com">
-        <button id="btn3">Push...</button>
-        <p>Site without prefix: <span id="out3"></span></p>
+        <p>Добавьте в документ 300-400 блоков div квадратной формы с размерами сторон 30px, и цветом фона. Добавление элементов выполните с помощью цикла. Добавьте событие при наведении мыши, которое будет скруглять данные блоки с помощью border-radius до круга. (Для замедления эффекта скругления в CSS можно добавить transition).</p>
+        <!-- <div id="sqr"></div> -->
+        <div id="out"></div>
         <hr>
         <!-- 4 -->
-        <h2>Задание 4</h2>
-        <p>Пользователь может ввести адрес сайта в формате http://site.ua, https://site.ua, http://www.site.ua, https://www.site.ua или site.ua. Ваша задача используя поиск в подстроке вывести site в виде: site.ua.</p>
-        <input id="in4" type="text" placeholder="Enter a site address ..." value="http://site.ua">
-        <button id="btn4">Push...</button>
-        <p>Site without prefix: <span id="out4"></span></p>
-        <hr>
-        <!-- 5 -->
-        <h2>Задание 5</h2>
-        <p>Пользователь заполняет форму состоящую из фамилии, имени пароля и email. Используя приведенные методы выполните обработку формы состоящую из удаления пробелов до и после введённых слов, пароль не должен быть меньше 5 символов, email должен содержать один символ @ и не содержать пробелов. Если форма заполнена корректно, возвращать true.</p>
-        <div class="reg-form">
-            <form id="myForm" name="regForm" action="#" method="POST">
-                <fieldset>
-                    <legend>
-                        <h3>Registration form</h3></legend>
-                    <input id="fName" type="text" name="fName" placeholder="First Name" value="Pavel">
-                    <input id="lName" type="text" name="lName" placeholder="Last Name" value="Viznytsia">
-                    <input type="password" name="pass" placeholder="Password" value="qwe"><span id="passCheck"></span>
-                    <input type="email" name="eMail" placeholder="E-mail" value="viznitsap@gmail.com">
-                    <input id="submit-btn" type="button" value="Отправить">
-                </fieldset>
-            </form>
+        <h2>Задача 4</h2>
+        <p>Создайте div размерами ширина – 100%, высота 250px. Ниже добавьте 4-5 изображений с одинаковыми классами, разного размера. Добавьте событие, которое будет при клике на изображении устанавливать его фоном блока div со свойством background-size: contain.</p>
+        <img id="slider4" class="slider4"></img>
+        <div class="sm-img-block">
+            <img src="img/bh.png" alt="" class="sm-img">
+            <img src="img/leia.png" alt="" class="sm-img">
+            <img src="img/ds.png" alt="" class="sm-img">
+            <img src="img/falcon.png" alt="" class="sm-img">
+            <img src="img/dv.png" alt="" class="sm-img">
         </div>
         <hr>
-        <!-- 6 -->
-        <h2>Задание 6</h2>
-        <p>Пользователь вводит символ, выведите его код.</p>
-        <input id="in6" type="text" placeholder="Enter a char ...">
-        <p>Code of this char is: <span id="out6"></span></p>
+        <h2>Задача 5</h2>
+        <p>Создайте блок размерами 50x50px. Добавьте событие клик, так, что при каждом клике на блоке он отодвигается на 100px вниз от предыдущего положения.</p>
+        <div id="sqr5" class="sqr5">down</div>
+        <hr>
+        <h2>Задача 6</h2>
+        <p>РЕАЛИЗУЙТЕ ТРИГГЕР ПЕРЕКЛЮЧАТЕЛЬ Реализуйте триггер переключатель следующего вида: При загрузке переключатель находится в первом положении. При клике, он переходит в положение два (средняя картинка), а в консоль выводится цифра 1. При следующем клике переключатель переходит в состояние три (нижняя картинка), а в консоль выводится цифра 2. При следующем клике, переключатель переходит в состояние 1 (верхняя картинка), а в консоль выводится 0.</p>
+        <div id="trigger" class="trigger">
+            <div id="sqr6" class="sqr6"></div>
+        </div>
         <hr>
     </div>
     <script src="main.js"></script>

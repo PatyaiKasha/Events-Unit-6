@@ -1,124 +1,114 @@
-// Задание 1. Вычитайте строку из input. Высчитайте ее длину.
-// Выведите результат.
+// Задача 1. Выведите координаты мыши относительно блока в момент движения курсора мыши внутри блока. Координаты выводить под блоком.
 
-document.getElementById('btn1').onclick = function() {
-    var in1 = document.getElementById('in1').value;
-    var out1 = document.getElementById('out1');
-    out1.innerHTML = in1.length;
-}
-
-// Задание 2. Создайте массив, который содержит имена изображений
-// в определенной папке. Запустите цикл по массиву и выведите все
-// изображения на страницу. Подсказка, для вывода изображения
-// используйте тег <img src=”xxxx”> где xxx – путь к файлу.
-
-var imgArray = ['ds.png', 'dv.png', 'falcon.png', 'leia.png', 'bh.png'];
-var imgCont = document.getElementById('imgCont');
-var img2 = document.getElementById('img2');
-
-document.getElementById('btn2').onclick = function() {
-
-    for (var i = 0; i < imgArray.length; i++) {
-        var someImg = document.createElement('IMG');
-        someImg.src = 'img/' + imgArray[i];
-        imgCont.insertBefore(someImg, imgCont.children[0]);
+document.onmousemove = function(event) {
+    if (event.target.id == 'block1') {
+        giveCoord(event);
+        // console.log(event);
     }
 }
 
-// Задание 3. Пользователь вводит URL адрес в input в формате http или https. Выведите только имя домена без префиксов http://, https://.
+function giveCoord(a) {
+    var x = document.getElementById('coordX');
+    x.innerHTML = a.offsetX + ' px';
+    var y = document.getElementById('coordY');
+    y.innerHTML = a.offsetY + ' px';
+}
 
-document.getElementById('btn3').onclick = function() {
-    var in3 = document.getElementById('in3').value;
-    var out = '';
-    if (~in3.indexOf('http://')) {
-        out = in3.substring(7);
-        document.getElementById('out3').innerHTML = out;
-    } else if (~in3.indexOf('https://')) {
-        out = in3.substring(8);
-        document.getElementById('out3').innerHTML = out;
+// Задача 2. Создайте блок div, в качестве изображения фона установите ему
+// изображение закрытой папки. Добавьте событие, которое выполняется при
+// двойном клике на блоке и заменяет фон блока на изображение открытой
+// папки.
+
+document.getElementById('folder').ondblclick = onDblclick;
+
+function onDblclick() {
+    if (this.id == 'folder') {
+        this.src = 'img/folder-open.svg';
+        this.id = 'folder-open';
     } else {
-        // console.log(-1);
-        out = in3.substring(0);
-        document.getElementById('out3').innerHTML = out;
+        this.src = 'img/folder.svg';
+        this.id = 'folder';
     }
 }
-// Задание 4. Пользователь может ввести адрес сайта в формате http://site.ua, https://site.ua, http://www.site.ua, https://www.site.ua или site.ua. Ваша задача используя поиск в подстроке вывести site в виде: site.ua.
-document.getElementById('btn4').onclick = function() {
-    var in4 = document.getElementById('in4').value;
-    var pos = '';
-    if (~in4.indexOf('http://')) {
-        pos = in4.slice(7);
-        document.getElementById('out4').innerHTML = pos;
-        if (~in4.indexOf('http://www.')) {
-            pos = in4.slice(11);
-            document.getElementById('out4').innerHTML = pos;
-        }
-    } else if (~in4.indexOf('https://')) {
-        pos = in4.slice(8);
-        document.getElementById('out4').innerHTML = pos;
-        if (~in4.indexOf('https://www.')) {
-            pos = in4.slice(12);
-            document.getElementById('out4').innerHTML = pos;
-        }
+
+
+// Задача 3. Добавьте в документ 300 - 400 блоков div квадратной формы с размерами сторон 30 px, и цветом фона.Добавление элементов выполните с помощью цикла.Добавьте событие при наведении мыши, которое будет скруглять данные блоки с помощью border - radius до круга.(Для замедления эффекта скругления в CSS можно добавить transition).
+
+function sqr300() {
+    var div = '<div class="sqr"></div>';
+    for (var i = 0; i < 320; i++) {
+        document.getElementById('out').innerHTML += div;
+    }
+}
+
+sqr300();
+
+var sqr = document.getElementsByClassName('sqr');
+for (var i = 0; i < sqr.length; i++) {
+    sqr[i].onmouseover = function() {
+        this.style.borderRadius = 100 + '%';
+        this.style.boxShadow = 0 + ' ' + 0 + ' ' + 10 + 'px';
+    }
+    sqr[i].onmouseleave = function() {
+        this.style.borderRadius = 0;
+        this.style.boxShadow = 'none';
+    }
+}
+
+// Задача 4. Создайте div размерами ширина – 100%, высота 250px. Ниже
+// добавьте 4-5 изображений с одинаковыми классами, разного размера.
+// Добавьте событие, которое будет при клике на изображении
+// устанавливать его фоном блока div со свойством background-size: contain.
+
+document.onclick = function(event) {
+    // console.log(event);
+    if (event.target.className == 'sm-img') {
+        changeImg(event.target);
+
+    }
+}
+
+function changeImg(t) {
+    // console.log(t);
+    document.querySelector('#slider4').style.background = 'url(' + t.src + ')';
+    document.querySelector('#slider4').style.backgroundSize = 'contain';
+    document.querySelector('#slider4').style.backgroundRepeat = 'no-repeat';
+    document.querySelector('#slider4').style.backgroundPosition = 'center center';
+}
+
+// Задача 5. Создайте блок размерами 50 x50px.Добавьте событие клик, так,
+// что при каждом клике на блоке он отодвигается на 100px вниз от
+// предыдущего положения.
+
+var mrg = 0;
+document.getElementById('sqr5').onclick = function() {
+    mrg += 100;
+    this.style.marginTop = mrg + 'px';
+}
+
+// Задача 6. РЕАЛИЗУЙТЕ ТРИГГЕР ПЕРЕКЛЮЧАТЕЛЬ Реализуйте
+// триггер переключатель следующего вида:
+// При загрузке переключатель находится в первом положении.
+// При клике, он переходит в положение два (средняя картинка), а в консоль
+// выводится цифра 1.
+// При следующем клике переключатель переходит в состояние три (нижняя
+// картинка), а в консоль выводится цифра 2. При следующем клике,
+// переключатель переходит в состояние 1 (верхняя картинка), а в консоль
+// выводится 0.
+
+var mrgl = 0;
+document.getElementById('sqr6').onclick = function() {
+    if (mrgl == 0) {
+        mrgl += 100;
+        this.style.marginLeft = mrgl + 'px';
+        console.log('1');
+    } else if (mrgl == 100) {
+        mrgl += 100;
+        this.style.marginLeft = mrgl + 'px';
+        console.log('2');
     } else {
-        // console.log(-1);
-        pos = in4.slice(0);
-        document.getElementById('out4').innerHTML = pos;
+        mrgl = 0;
+        this.style.marginLeft = mrgl;
+        console.log('0');
     }
-}
-
-// Задание 5. Пользователь заполняет форму состоящую из фамилии, имени пароля и email. Используя приведенные методы выполните обработку формы состоящую из удаления пробелов до и после введённых слов, пароль не должен быть меньше 5 символов, email должен содержать один символ @ и не содержать пробелов. Если форма заполнена корректно, возвращать true.
-
-var myForm = document.getElementById('myForm');
-
-document.getElementById('submit-btn').onclick = function() {
-    valid(myForm);
-}
-
-function valid(form) {
-    var fail = false;
-    var fName = form.fName.value;
-    var lName = form.lName.value;
-    var pass = form.pass.value;
-    var eMail = form.eMail.value;
-
-    var text1 = fName.trim();
-    console.log(text1);
-
-    var text2 = lName.trim();
-    console.log(text2);
-
-    var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (fName == '' || fName == ' ') {
-        console.log('Введите имя');
-    } else if (lName == '' || lName == ' ') {
-        console.log('Введите фамилию');
-    } else if (pass == '' || pass.length < 6) {
-        console.log('Введите пароль');
-    } else if (validEmail.test(eMail) == false) {
-        console.log('Введите E-mail правильно!');
-    } else {
-        return (console.log(true));
-        // window.location = 'http://diz.promo.net.ua/patyaikasha/';
-    }
-
-
-    // Получаем все значения/value элементов form
-    // for (var i = 0; i < form.length; i++) {
-    //     if (form[i] != undefined) {
-    //         console.log(form[i].value);
-    //     }
-    // }
-
-}
-
-
-
-
-
-// Задание 6. Пользователь вводит символ, выведите его код.
-
-document.getElementById('in6').onkeypress = function(event) {
-    document.getElementById('out6').innerHTML += event.charCode + '; ';
 }
