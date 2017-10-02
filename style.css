@@ -81,4 +81,5 @@ hr {
     background: pink;
     /*margin-left: 200px;*/
     transition: all .25s ease;
+    border-radius: 16px;
 }

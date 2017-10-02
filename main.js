@@ -97,18 +97,20 @@ document.getElementById('sqr5').onclick = function() {
 // выводится 0.
 
 var mrgl = 0;
+var pos = 0;
 document.getElementById('sqr6').onclick = function() {
     if (mrgl == 0) {
         mrgl += 100;
         this.style.marginLeft = mrgl + 'px';
-        console.log('1');
+        console.log(++pos);
     } else if (mrgl == 100) {
         mrgl += 100;
         this.style.marginLeft = mrgl + 'px';
-        console.log('2');
+        console.log(++pos);
     } else {
         mrgl = 0;
+        pos = 0;
         this.style.marginLeft = mrgl;
-        console.log('0');
+        console.log(pos);
     }
 }
